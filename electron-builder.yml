@@ -1,0 +1,47 @@
+appId: com.example.nextron
+productName: My Nextron App
+copyright: Copyright © 2018 Yoshihide Shiono
+directories:
+  output: dist
+  buildResources: resources
+publish:
+  - github
+# repository:
+#   - type: git
+#   - url: https://github.com/sdsb8432/electron-update
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+win:
+  icon: "resources/logo.png"
+mac:
+  bundleVersion: '1'
+  bundleShortVersion: '1.0.0'
+  icon: "resources/logo.icns"
+  type: development
+  identity: K2KGPW7USM
+  hardenedRuntime: false
+  category: public.app-category.developer-tools
+  target:
+    - target: dmg
+      arch:
+        - universal
+linux:
+  maintainer: dev@alpsoft.com
+  category: Utility
+  description: squidshell
+  vendor: alpsoft
+  mimeTypes:
+    - x-scheme-handler/squidhsell
+  target:
+    - target: deb
+    - target: rpm
+deb:
+  depends:
+    - gconf2
+    - gconf-service
+    - libnotify4
+    - libxtst6
+    - libnss3
